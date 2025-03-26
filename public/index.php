@@ -15,12 +15,13 @@ try {
 
     $app = new App();
     $app->run();
-} catch (\Throwable $th) {
+} catch (Throwable $th) {
     header("Content-Type: application/json");
     echo json_encode([
         'code' => $th->getCode(),
         'message' => $th->getMessage(),
         'file' => $th->getFile(),
         'line' => $th->getLine(),
+        'trace' => $th->getTrace(),
     ], JSON_PRETTY_PRINT);
 }
