@@ -4,12 +4,13 @@ declare(strict_types=1);
 
 namespace App\Kernel\Controller;
 
+use App\Kernel\Container\DIContainer;
 use App\Kernel\Exceptions\ViewNotFoundException;
 use App\Kernel\Http\Request;
 use App\Kernel\Http\Response;
 use App\Kernel\View\View;
 
-abstract class Controller
+class Controller extends DIContainer
 {
     private Request $request;
     private Response $response;
