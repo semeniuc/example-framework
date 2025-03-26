@@ -1,0 +1,7 @@
+RewriteEngine On
+
+# Исключаем из переписывания запросы к существующим файлам и папкам
+RewriteCond %{REQUEST_FILENAME} !-f
+
+# Перенаправляем все остальные запросы на public/index.php
+RewriteRule ^(.*)$ public/index.php [QSA,L]
